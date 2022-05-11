@@ -32,38 +32,6 @@ namespace Modul_3
             if (text.Text != "")
                 text.BackColor = Color.White;
         }
-        private void buttonAdd_Click(object sender, EventArgs e)
-        {
-            if (NameTextBox.Text != "" && LastNameTextBox.Text != "" &&
-                MailTextBox.Text != "" && PhoneTextBox.Text != "")
-            {
-                listBox.Items.Add($"Пользователь: {NameTextBox.Text} {LastNameTextBox.Text}" +
-                    $" {MailTextBox.Text} {PhoneTextBox.Text}");
-
-                NameTextBox.Text = "";
-                LastNameTextBox.Text = "";
-                MailTextBox.Text = "";
-                PhoneTextBox.Text = "";
-
-                LastNameTextBox.BackColor = Color.White;
-                MailTextBox.BackColor = Color.White;
-                PhoneTextBox.BackColor = Color.White;
-            }
-            else
-            {
-                if (NameTextBox.Text == "")
-                    NameTextBox.BackColor = Color.FromArgb(255, 98, 90);
-                if (LastNameTextBox.Text == "")
-                    LastNameTextBox.BackColor = Color.FromArgb(255, 98, 90);
-                if (MailTextBox.Text == "")
-                    MailTextBox.BackColor = Color.FromArgb(255, 98, 90);
-                if (PhoneTextBox.Text == "")
-                    PhoneTextBox.BackColor = Color.FromArgb(255, 98, 90);
-
-                MessageBox.Show("Не все поля зополнены!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-       
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (removeToolStripMenuItem.Checked == false)
@@ -134,6 +102,38 @@ namespace Modul_3
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 listBox.Items.AddRange(File.ReadAllLines(ofd.FileName, Encoding.UTF8));
+            }
+        }
+
+        private void buttonAdd_Click_1(object sender, EventArgs e)
+        {
+            if (NameTextBox.Text != "" && LastNameTextBox.Text != "" &&
+                MailTextBox.Text != "" && PhoneTextBox.Text != "")
+            {
+                listBox.Items.Add($"Пользователь: {NameTextBox.Text} {LastNameTextBox.Text}" +
+                    $" {MailTextBox.Text} {PhoneTextBox.Text}");
+
+                NameTextBox.Text = "";
+                LastNameTextBox.Text = "";
+                MailTextBox.Text = "";
+                PhoneTextBox.Text = "";
+
+                LastNameTextBox.BackColor = Color.White;
+                MailTextBox.BackColor = Color.White;
+                PhoneTextBox.BackColor = Color.White;
+            }
+            else
+            {
+                if (NameTextBox.Text == "")
+                    NameTextBox.BackColor = Color.FromArgb(255, 98, 90);
+                if (LastNameTextBox.Text == "")
+                    LastNameTextBox.BackColor = Color.FromArgb(255, 98, 90);
+                if (MailTextBox.Text == "")
+                    MailTextBox.BackColor = Color.FromArgb(255, 98, 90);
+                if (PhoneTextBox.Text == "")
+                    PhoneTextBox.BackColor = Color.FromArgb(255, 98, 90);
+
+                MessageBox.Show("Не все поля зополнены!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
